@@ -1,0 +1,27 @@
+package savinova.hw3.service;
+
+import org.springframework.stereotype.Service;
+import savinova.hw3.model.Recipe;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class RecipeServiceImpl implements RecipeService {
+    private final Map<Integer, Recipe> recipeMap = new HashMap<>();
+    private int counter=0;
+
+    @Override
+    public Recipe add(Recipe recipe) {
+        recipeMap.put(this.counter++, recipe);
+
+        return recipe;
+    }
+
+    @Override
+    public Recipe get(int id) {
+        return recipeMap.get(id);
+    }
+
+
+}
