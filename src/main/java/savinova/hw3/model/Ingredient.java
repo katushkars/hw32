@@ -3,7 +3,7 @@ package savinova.hw3.model;
 public class Ingredient {
     private String name;
     private int counter;
-    public String unit;
+    private String unit;
 
     private String getName() {
         return name;

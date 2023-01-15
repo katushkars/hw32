@@ -6,7 +6,7 @@ import savinova.hw3.service.RecipeService;
 
 @RestController
 @RequestMapping("/recipe")
-public class RecipeController {
+    public class RecipeController {
     private final RecipeService recipeService;
 
     public RecipeController(RecipeService recipeService) {
@@ -15,9 +15,8 @@ public class RecipeController {
 
 
     @PostMapping
-   public Recipe addRecipe(Recipe recipe){
-
-return recipeService.add (recipe);
+   public Recipe addRecipe(@RequestBody Recipe recipe){
+        return recipeService.add (recipe);
    }
    @GetMapping("/{id}")
    public Recipe getRecipe(@PathVariable("id") int id){
