@@ -24,4 +24,13 @@ public class IngredientController {
         return ingredientService.get(id);
 
     }
+    @PutMapping("/{id}")
+    public Ingredient updateIngredient(@PathVariable("id") int id, @RequestBody Ingredient ingredient) {
+        return ingredientService.update(id, ingredient);
+    }
+
+    @DeleteMapping("/{id}")
+    public Ingredient deleteIngredient(@PathVariable("id") int id) {
+        return ingredientService.remove(id);
+    }
 }

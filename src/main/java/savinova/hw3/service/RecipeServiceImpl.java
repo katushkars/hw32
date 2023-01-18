@@ -14,7 +14,6 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public Recipe add(Recipe recipe) {
         recipeMap.put(this.counter++, recipe);
-
         return recipeMap.put(this.counter++, recipe);
     }
 
@@ -30,7 +29,9 @@ public class RecipeServiceImpl implements RecipeService {
         return null;
     }
     @Override
-    public Recipe remove (int id)
+    public Recipe remove (int id){
+        return recipeMap.remove(id);
+    }
 
 
 }

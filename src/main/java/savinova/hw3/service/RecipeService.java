@@ -8,4 +8,6 @@ Recipe add(Recipe recipe);
 Recipe get (int id);
 
 Recipe update (int id, Recipe recipe);
+
+    Recipe remove(int id);
 }
