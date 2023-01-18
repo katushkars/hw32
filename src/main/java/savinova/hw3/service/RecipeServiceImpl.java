@@ -15,7 +15,7 @@ public class RecipeServiceImpl implements RecipeService {
     public Recipe add(Recipe recipe) {
         recipeMap.put(this.counter++, recipe);
 
-        return recipe;
+        return recipeMap.put(this.counter++, recipe);
     }
 
     @Override
