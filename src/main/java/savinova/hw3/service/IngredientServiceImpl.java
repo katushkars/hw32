@@ -15,7 +15,6 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public Ingredient add(Ingredient ingredient) {
-        ingredientMap.put(this.counter++, ingredient);
         return ingredientMap.put(this.counter++, ingredient);
     }
 

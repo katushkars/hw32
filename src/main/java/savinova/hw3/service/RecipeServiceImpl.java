@@ -13,8 +13,6 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Recipe add(Recipe recipe) {
-        recipeMap.put(this.counter++, recipe);
-
         return recipeMap.put(this.counter++, recipe);
     }
 
