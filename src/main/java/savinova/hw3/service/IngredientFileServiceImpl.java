@@ -3,6 +3,7 @@ package savinova.hw3.service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,7 +14,7 @@ public class IngredientFileServiceImpl implements IngredientFileService{
     private String dataFilePath;
     @Value("${name.of.data.file2}")
     private String dataFileName;
-
+    @Override
     public boolean saveToFile (String json){
         try {
             cleanDataFile();
@@ -23,6 +24,7 @@ public class IngredientFileServiceImpl implements IngredientFileService{
             return false;
         }
     }
+    @Override
     public String readFromFile (){
         try{
             return Files.readString(Path.of(dataFilePath,dataFileName));
@@ -30,7 +32,8 @@ public class IngredientFileServiceImpl implements IngredientFileService{
             throw new RuntimeException(e);
         }
     }
-    private boolean cleanDataFile(){
+    @Override
+    public boolean cleanDataFile(){
         try {
             Path path = Path.of(dataFilePath,dataFileName);
             Files.deleteIfExists(path);
@@ -42,6 +45,11 @@ public class IngredientFileServiceImpl implements IngredientFileService{
         return false;
 
     }
+    @Override
+    public File getDataFile(){
+        return new File(dataFilePath+"/"+dataFileName);
+    }
 }
+
 
 

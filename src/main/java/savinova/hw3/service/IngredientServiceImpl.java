@@ -65,5 +65,6 @@ public class IngredientServiceImpl implements IngredientService {
             throw new RuntimeException(e);
         }
     }
+
 }
 
